@@ -1,0 +1,70 @@
+<style>
+	.farm {
+		border: 2px solid;
+		width: 150px;
+		padding: 10px;
+		display: inline-block;
+	}
+	.banner {
+		border: 1px solid;
+		padding: 2px;
+		
+	}
+	.cave {
+		border: 2px solid;
+		width: 150px;
+		padding: 10px;
+		display: inline-block;
+	}
+	.house {
+		border: 2px solid;
+		width: 150px;
+		padding: 10px;
+		display: inline-block;
+	}
+	.casino {
+		border: 2px solid;
+		width: 150px;
+		padding: 10px;
+		display: inline-block;
+	}
+</style>
+
+<h1>Your Gold: <%= session[:counter] %></h1>
+
+<div class="banner">
+	<div class="farm">
+		<form action="/rpgs_farm" method="post">
+		<input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token"/>
+			<h2>Farm</h2>
+			<p>(earn 10-20 golds)</p>
+			<input type="submit"  value="Gold!">
+		</form>
+	</div>
+	<div class="cave">
+		<form action="/rpgs_cave" method="post">
+		<input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token"/>
+			<h2>Cave</h2>
+			<p>(earn 5-10 golds)</p>
+			<input type="submit"  value="Gold!">
+		</form>
+	</div>
+	<div class="house">
+		<form action="/rpgs_house" method="post">
+		<input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token"/>
+			<h2>House</h2>
+			<p>(earn 2-5 golds)</p>
+			<input type="submit"  value="Gold!">
+		</form>
+	</div>
+	<div class="casino">
+		<form action="/rpgs_casino" method="post">
+		<input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token"/>
+			<h2>Casino</h2>
+			<p>(earn/takes 0-50 golds)</p>
+			<input type="submit"  value="Gold!">
+		</form>
+	</div>
+</div>
+Activities:
+
